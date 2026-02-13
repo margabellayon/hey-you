@@ -8,15 +8,20 @@ static_path = os.path.join(project_root, 'static')
 
 app = Flask(__name__, static_folder=static_path, static_url_path='/static')
 
+import os
+
 def get_tracks():
     tracks = []
     static_dir = os.path.join(os.path.dirname(__file__), "static")
-    for filename in sorted(os.listdir(static_dir)):
-        if filename.lower().endswith(".mp3"):
-            tracks.append({
-                "name": f"♡ {filename.replace('.mp3','').replace('_',' ')} ♡",
-                "file": f"/static/{filename}"
-            })
+    if os.path.exists(static_dir):
+        for filename in sorted(os.listdir(static_dir)):
+            if filename.lower().endswith(".mp3"):
+                tracks.append({
+                    "name": f"♡ {filename.replace('.mp3','').replace('_',' ')} ♡",
+                    "file": f"/static/{filename}"  # Flask serves this automatically
+                })
+    else:
+        print("STATIC DIR NOT FOUND:", static_dir)
     return tracks
 
 
@@ -523,4 +528,5 @@ def home():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
