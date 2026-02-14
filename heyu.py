@@ -183,7 +183,7 @@ onclick="openLetter()">
     <p>
         Happy Valentine’s, Gurang!!! ♡<br><br>
         I hope this isn't too much, I just really wanted to make something special(?) for you. I don't really have much to say, I ran out of words already huhuhu sorry. Anyway, just make sure to read the letters I wroteand listen to the playlist I made hshshshshshsh <br><br>
-        P.s. I recommend listening to the playlist while reading
+        P.s. I recommend listening to the playlist while reading <br><br> I love you — always ♡
     </p>
     <button onclick="showPlayer()">💿 Music</button>
     <button onclick="showPhotos()">🎀 Letters</button>
