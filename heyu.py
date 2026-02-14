@@ -183,8 +183,7 @@ onclick="openLetter()">
     <p>
         Happy Valentine’s, Gurang!!! ♡<br><br>
         I hope this isn't too much, I just really wanted to make something special(?) for you. I don't really have much to say, I ran out of words already huhuhu sorry. Anyway, just make sure to read the letters I wroteand listen to the playlist I made hshshshshshsh <br><br>
-        P.s. I recommend listening to the playlist while reading, and if u want the spotify link just tell me :] <br><br>
-        I love you — always ♡
+        P.s. I recommend listening to the playlist while reading
     </p>
     <button onclick="showPlayer()">💿 Music</button>
     <button onclick="showPhotos()">🎀 Letters</button>
@@ -258,15 +257,21 @@ function showPlayer() {
     playerSection.style.display = "block";
 
     const spotifyDiv = document.getElementById("spotifyPlayer");
-    spotifyDiv.innerHTML = tracks[0].iframe;
-
+    if (spotifyDiv.innerHTML === "") {
+        spotifyDiv.innerHTML = tracks[0].iframe;
+    }
 }
-
 
 function showPhotos() {
     letter.style.display = "none";
     photoSection.style.display = "block";
     initPhotoGrid();
+}
+
+function back() {
+    letter.style.display = "block";
+    playerSection.style.display = "none";
+    photoSection.style.display = "none";
 }
 
 
